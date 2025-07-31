@@ -1,4 +1,3 @@
-/* Reset & base */
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +5,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
-/* Обновленные размеры шрифтов */
 .intro-hello {
   font-size: 20px;
 }
@@ -120,7 +117,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Анимации при наведении на контейнеры */
+
 .hover-animate {
   transition: all 0.3s ease;
   transform: translateY(0);
@@ -226,8 +223,8 @@ body {
 
 .job .date {
   margin-bottom: 15px;
-  max-width: 80%; /* Ограничение ширины даты */
-  word-break: break-word; /* Перенос длинных слов */
+  max-width: 80%;
+  word-break: break-word;
 }
 
 .job-header {
@@ -241,15 +238,15 @@ body {
 
 .job h3 {
   margin-bottom: 5px;
-  max-width: 90%; /* Ограничение ширины должности */
-  word-break: break-word; /* Перенос длинных слов */
+  max-width: 90%;
+  word-break: break-word;
 }
 
 .job-details {
   color: #5c5c5c;
   margin-bottom: 40px;
-  max-width: 90%; /* Ограничение ширины места работы */
-  word-break: break-word; /* Перенос длинных слов */
+  max-width: 90%;
+  word-break: break-word;
 }
 
 .job ul {
@@ -298,7 +295,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  overflow: visible; /* Добавлено */
+  overflow: visible;
 }
 
 
@@ -312,8 +309,8 @@ body {
   justify-content: center;
   width: 100%;
   gap: 30px;
-  position: relative; /* Добавлено */
-  z-index: 2; /* Добавлено */
+  position: relative;
+  z-index: 2;
 }
 
 .tools-category {
@@ -325,7 +322,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100px;
-  z-index: 3; /* Увеличено */
+  z-index: 3;
 }
 
 .tools-group {
@@ -387,8 +384,8 @@ body {
 
 .education-item .year {
   margin-bottom: 5px;
-  max-width: 70%; /* Ограничение ширины даты */
-  word-break: break-word; /* Перенос длинных слов */
+  max-width: 70%;
+  word-break: break-word;
 }
 
 .education-item .degree {
@@ -483,12 +480,11 @@ body {
 }
 
 /* Material wave effect */
-/* Улучшенный волновой эффект */
 .wave {
-  background: rgba(255, 255, 255, 0.7); /* Увеличена непрозрачность */
+  background: rgba(255, 255, 255, 0.7);
   transform: scale(0);
   pointer-events: none;
-  animation: wave 0.8s ease-out; /* Увеличенная длительность */
+  animation: wave 0.8s ease-out;
 }
 
 @keyframes wave {
@@ -497,22 +493,21 @@ body {
     opacity: 1;
   }
   50% {
-    opacity: 0.7; /* Пик видимости */
+    opacity: 0.7;
   }
   100% {
-    transform: scale(6); /* Увеличенный масштаб */
+    transform: scale(6);
     opacity: 0;
   }
 }
 
-/* Цвет текста для Most Recent в Experience */
 .job.green * {
-  color: #fff !important; /* Белый текст */
+  color: #fff !important;
 }
 
 .job.green .job-details,
 .job.green ul {
-  color: rgba(255, 255, 255, 0.9) !important; /* Слегка прозрачный белый */
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .job.green .most-btn {
@@ -520,13 +515,12 @@ body {
   color: #DDF163 !important;
 }
 
-/* Цвет текста для избранного в Education */
 .education-item.liked * {
-  color: #fff !important; /* Белый текст */
+  color: #fff !important;
 }
 
 .education-item.liked small {
-  color: rgba(255, 255, 255, 0.8) !important; /* Слегка прозрачный */
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .education-item.liked .like-btn {
@@ -586,7 +580,7 @@ body {
   animation: fadeInUp 0.6s ease-out 1.4s both; 
 }
 
-/* Адаптивность для планшетов (820px - 1024px) */
+
 @media (max-width: 1024px) {
   body {
     padding: 20px;
@@ -621,7 +615,6 @@ body {
     width: 700px;
   }
   
-  /* Вторая строка */
   .experience-section {
     grid-column: 1 / span 2;
     width: auto;
@@ -639,7 +632,6 @@ body {
     height: auto;
   }
   
-  /* Третья строка */
   .education-section {
     grid-column: 1 / span 2;
     width: auto;
@@ -662,7 +654,6 @@ body {
   }
 }
 
-/* Адаптивность для iPad Air и мобильных (до 820px) */
 @media (max-width: 820px) {
   body {
     padding: 15px;
@@ -677,7 +668,6 @@ body {
     gap: 15px;
   }
   
-  /* Первая строка - исправления */
   .avatar-container {
     grid-column: 1;
     grid-row: 1;
@@ -697,8 +687,7 @@ body {
     height: auto;
     margin-left: 0px;
   }
-  
-  /* Вторая строка */
+
   .experience-section {
     grid-column: 1;
     grid-row: 1;
@@ -719,8 +708,7 @@ body {
     width: 100%;
     max-width: 300px;
   }
-  
-  /* Третья строка */
+
   .education-section {
     grid-column: 1;
     grid-row: 1;
@@ -730,8 +718,7 @@ body {
     grid-column: 1;
     grid-row: 2;
   }
-  
-  /* Элементы опыта работы */
+
   .job-header {
     flex-direction: column;
     gap: 10px;
@@ -740,8 +727,7 @@ body {
   .job .job-details {
     margin-bottom: 15px;
   }
-  
-  /* Образование */
+
   .education-grid {
     grid-template-columns: 1fr;
   }
@@ -751,13 +737,11 @@ body {
     height: auto;
     padding: 15px;
   }
-  
-  /* Интересы */
+
   .interests {
     justify-content: center;
   }
-  
-  /* Уменьшаем шрифты для мобильных */
+
   .intro-hello {
     font-size: 16px !important;
   }
@@ -791,7 +775,6 @@ body {
   }
 }
 
-/* Для маленьких устройств (до 400px) */
 @media (max-width: 400px) {
   body {
     padding: 10px;
@@ -801,14 +784,12 @@ body {
     padding: 15px;
     border-radius: 15px;
   }
-  
-  /* Уменьшаем аватар */
+ 
   .avatar-container img {
     width: 150px;
     height: 150px;
   }
-  
-  /* Фиксим языки */
+
   .lang {
     flex-direction: column;
     align-items: flex-start;
@@ -825,8 +806,7 @@ body {
   .bar {
     width: 100%;
   }
-  
-  /* Опыт работы */
+
   .job-header {
     flex-direction: column;
     gap: 10px;
@@ -840,8 +820,7 @@ body {
   .job ul {
     padding-left: 15px;
   }
-  
-  /* Образование */
+
   .education-grid {
     grid-template-columns: 1fr;
   }
@@ -852,13 +831,11 @@ body {
     padding: 15px;
     margin-bottom: 10px;
   }
-  
-  /* Интересы */
+
   .interests {
     justify-content: center;
   }
-  
-  /* Обратная связь */
+
   .contact {
     padding: 15px;
   }
@@ -866,8 +843,7 @@ body {
   .contact p {
     margin-bottom: 5px;
   }
-  
-  /* Еще уменьшаем шрифты */
+
   .intro-hello {
     font-size: 14px !important;
   }
@@ -885,9 +861,7 @@ body {
   }
 }
 
-/* Для очень маленьких экранов (до 340px) */
 @media (max-width: 340px) {
-  /* Уменьшаем текст в интересах */
   .interests span {
     font-size: 12px !important;
     padding: 6px 10px;
@@ -914,7 +888,6 @@ body {
   }
 }
 
-/* Стили для кнопок действий */
 .action-buttons {
   display: flex;
   justify-content: center;
@@ -941,7 +914,6 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Стили для редактируемых элементов */
 [data-editable] {
   transition: all 0.3s ease;
   padding: 2px 4px;
@@ -953,7 +925,6 @@ body {
   display: block;
 }
 
-/* Для многострочных элементов */
 .job ul li[data-editable],
 .education-item small[data-editable] {
   white-space: normal;
@@ -975,7 +946,6 @@ body {
   max-height: none;
 }
 
-/* Ограничения для конкретных элементов */
 .job h3[data-editable] {
   max-width: 90%;
 }
@@ -996,7 +966,6 @@ body {
   max-width: 100%;
 }
 
-/* Ripple эффект */
 .ripple {
   position: absolute;
   border-radius: 50%;
@@ -1012,7 +981,6 @@ body {
   }
 }
 
-/* Анимация изменения */
 @keyframes highlight {
   0% { background-color: rgba(37, 211, 102, 0.3); }
   100% { background-color: transparent; }
@@ -1022,7 +990,6 @@ body {
   animation: highlight 1s ease;
 }
 
-/* Стили для печати */
 @media print {
   .action-buttons, .most-btn, .like-btn {
     display: none !important;
@@ -1037,7 +1004,6 @@ body {
   }
 }
 
-/* Применение анимаций при наведении */
 .header-info-container,
 .languages-section,
 .experience-section,
@@ -1068,25 +1034,17 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Усиление эффекта для контакта */
 .contact:hover {
   transform: translateY(-7px);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* ------------------------- */
-/* СТИЛИ ДЛЯ ГЕНЕРАЦИИ PDF */
-/* ------------------------- */
-
-/* Отключаем анимации и переходы только в режиме print-mode */
 .print-mode {
-  /* Отключаем все анимации и переходы */
   * {
     animation: none !important;
     transition: none !important;
   }
-  
-  /* Убираем эффекты наведения */
+
   .header-info-container,
   .languages-section,
   .experience-section,
@@ -1101,14 +1059,12 @@ body {
     transform: none !important;
     box-shadow: none !important;
   }
-  
-  /* Гарантируем полную непрозрачность */
+
   .avatar-container img,
   .contact {
     opacity: 1 !important;
   }
-  
-  /* Отключаем hover-эффекты */
+
   .avatar-container img:hover,
   .job:hover,
   .tools-category:hover,
@@ -1118,15 +1074,13 @@ body {
     transform: none !important;
     box-shadow: none !important;
   }
-  
-  /* Показываем выбранные элементы */
+
   .job.green .most-btn,
   .education-item.liked .like-btn {
     opacity: 1 !important;
     visibility: visible !important;
   }
-  
-  /* Гарантируем правильные цвета */
+
   .job.green {
     background: #28D979 !important;
   }
@@ -1144,7 +1098,6 @@ body {
   }
 }
 
-/* Гарантируем, что анимации работают при обычном просмотре */
 @media (prefers-reduced-motion: no-preference) {
   .avatar-container { 
     animation: fadeInLeft 0.6s ease-out both; 
@@ -1179,7 +1132,6 @@ body {
   }
 }
 
-/* Для всех заголовков должностей */
 .job h3 {
   max-width: 100%; 
   white-space: nowrap; 
@@ -1187,7 +1139,7 @@ body {
   text-overflow: ellipsis;
 }
 
-/* Для всех мест работы */
+
 .job .job-details {
   max-width: 100%; 
   white-space: nowrap; 
@@ -1197,13 +1149,13 @@ body {
 
 .job-header > div {
   flex: 0 0 40%;
-  min-width: 0; /* Важно для правильного обрезания текста */
+  min-width: 0;
 }
 
 .job ul {
   list-style: disc inside;
   flex: 1;
-  min-width: 0; /* Важно для правильного обрезания текста */
+  min-width: 0;
 }
 
 .education-item .year {
@@ -1225,12 +1177,11 @@ body {
 }
 
 .education-item small {
-  /* Разрешаем перенос для тегов */
   word-break: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Максимум 2 строки */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
@@ -1241,7 +1192,6 @@ body {
   max-width: 120px;
 }
 
-/* Добавим в конец style.css */
 .force-ellipsis .job h3,
 .force-ellipsis .job .job-details,
 .force-ellipsis .education-item .year,

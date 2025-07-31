@@ -1,17 +1,15 @@
-// EXPERIENCE: «Most recent» button logic
 document.querySelectorAll(".most-btn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
     const job = btn.closest(".job");
     const isActive = job.classList.contains("green");
 
-    // Сброс всех
+    
     document.querySelectorAll(".job").forEach((j) => {
       j.classList.remove("green");
       j.querySelector(".most-btn").textContent = "Most recent?";
     });
 
-    // Активация если не было активно
     if (!isActive) {
       job.classList.add("green");
       btn.textContent = "most recent";
@@ -19,26 +17,26 @@ document.querySelectorAll(".most-btn").forEach((btn) => {
   });
 });
 
-// EDUCATION: «Like» icon logic
+
 document.querySelectorAll(".like-btn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
     const item = btn.closest(".education-item");
     const isLiked = item.classList.contains("liked");
 
-    // Сброс всех
+   
     document
       .querySelectorAll(".education-item")
       .forEach((i) => i.classList.remove("liked"));
 
-    // Активация если не было лайкнуто
+   
     if (!isLiked) {
       item.classList.add("liked");
     }
   });
 });
 
-// Ripple эффект для всех кнопок
+
 function createRipple(event) {
   const button = event.currentTarget;
   const circle = document.createElement("span");
@@ -64,7 +62,7 @@ document.querySelectorAll("button").forEach((btn) => {
   btn.addEventListener("click", createRipple);
 });
 
-// Режим редактирования
+
 const editButton = document.getElementById("edit-resume");
 const downloadButton = document.getElementById("download-pdf");
 const editableElements = document.querySelectorAll("[data-editable]");
@@ -72,28 +70,25 @@ const container = document.querySelector(".container");
 
 let isEditing = false;
 
-// Переключение режима редактирования
+
 editButton.addEventListener("click", () => {
   isEditing = !isEditing;
 
   if (isEditing) {
-    // Включаем режим редактирования
+   
     container.classList.add("edit-mode");
     editButton.textContent = "Сохранить";
 
-    // Делаем элементы редактируемыми
+    
     editableElements.forEach((el) => {
       el.contentEditable = true;
     });
   } else {
-    // Выключаем режим редактирования
     container.classList.remove("edit-mode");
     editButton.textContent = "Редактировать";
 
-    // Сохраняем изменения
     saveChanges();
 
-    // Эффект подсветки измененных элементов
     editableElements.forEach((el) => {
       el.contentEditable = false;
       el.classList.add("highlight");
@@ -102,14 +97,12 @@ editButton.addEventListener("click", () => {
   }
 });
 
-// Сохранение данных в localStorage
 function saveChanges() {
   editableElements.forEach((el) => {
     const key = el.getAttribute("data-editable");
     localStorage.setItem(key, el.textContent);
   });
 
-  // Сохраняем состояние кнопок
   const mostRecentJob = document.querySelector(".job.green");
   if (mostRecentJob) {
     localStorage.setItem("mostRecentJob", mostRecentJob.dataset.id);
@@ -121,7 +114,6 @@ function saveChanges() {
   }
 }
 
-// Загрузка сохраненных данных
 function loadSavedData() {
   editableElements.forEach((el) => {
     const key = el.getAttribute("data-editable");
@@ -131,7 +123,6 @@ function loadSavedData() {
     }
   });
 
-  // Восстанавливаем состояние кнопок
   const mostRecentJobId = localStorage.getItem("mostRecentJob");
   if (mostRecentJobId) {
     const job = document.querySelector(`.job[data-id="${mostRecentJobId}"]`);
@@ -166,27 +157,23 @@ function forceEllipsisStyles() {
     el.style.whiteSpace = "nowrap";
     el.style.overflow = "hidden";
     el.style.textOverflow = "ellipsis";
-    el.style.display = "block"; // Важно для работы ellipsis
+    el.style.display = "block";
   });
 }
 
-// Обработчик скачивания PDF
 downloadButton.addEventListener("click", async () => {
   const button = document.getElementById("download-pdf");
   const originalButtonText = button.textContent;
   button.textContent = "Генерация PDF...";
   button.disabled = true;
 
-  // Сохраняем ссылки на элементы
   const actionButtons = document.querySelector(".action-buttons");
   const mostButtons = document.querySelectorAll(".most-btn");
   const likeButtons = document.querySelectorAll(".like-btn");
 
   try {
-    // Сохраняем состояние редактирования
     const wasEditing = isEditing;
 
-    // Выходим из режима редактирования
     if (isEditing) {
       isEditing = false;
       container.classList.remove("edit-mode");
@@ -197,14 +184,11 @@ downloadButton.addEventListener("click", async () => {
       });
     }
 
-    // Сохраняем оригинальные классы контейнера
     const originalContainerClasses = container.className;
 
-    // Добавляем класс для принудительного отображения троеточий
     container.classList.add("force-ellipsis");
     container.classList.add("print-mode");
 
-    // Сохраняем оригинальные стили
     const originalStyles = {
       position: container.style.position,
       top: container.style.top,
@@ -216,7 +200,6 @@ downloadButton.addEventListener("click", async () => {
       transform: container.style.transform,
     };
 
-    // Сохраняем видимость кнопок
     const originalActionVisibility = actionButtons.style.visibility;
     const originalMostVisibility = Array.from(mostButtons).map(
       (btn) => btn.style.visibility
@@ -225,7 +208,6 @@ downloadButton.addEventListener("click", async () => {
       (btn) => btn.style.visibility
     );
 
-    // Подготовка контейнера для генерации PDF
     container.style.position = "fixed";
     container.style.top = "0";
     container.style.left = "0";
@@ -234,25 +216,19 @@ downloadButton.addEventListener("click", async () => {
     container.style.boxShadow = "none";
     container.style.transform = "none";
 
-    // Скрываем кнопки
     actionButtons.style.visibility = "hidden";
     mostButtons.forEach((btn) => (btn.style.visibility = "hidden"));
     likeButtons.forEach((btn) => (btn.style.visibility = "hidden"));
 
-    // Принудительно применяем стили для троеточий
     forceEllipsisStyles();
 
-    // Конвертируем SVG в DataURL для корректной работы
     await convertSvgsToDataUrls();
 
-    // Ждем загрузки всех изображений
     await waitForImages();
 
-    // Создаём PDF
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF("p", "mm", "a4");
 
-    // Используем html2canvas с увеличенным scale
     const canvas = await html2canvas(container, {
       scale: 3,
       useCORS: true,
@@ -262,7 +238,6 @@ downloadButton.addEventListener("click", async () => {
         const clonedContainer = clonedDoc.querySelector(".container");
         if (clonedContainer) {
           clonedContainer.style.animation = "none";
-          // Применяем класс для троеточий в клоне
           clonedContainer.classList.add("force-ellipsis");
         }
         clonedDoc.querySelectorAll(".job.green .most-btn").forEach((btn) => {
@@ -276,7 +251,6 @@ downloadButton.addEventListener("click", async () => {
       },
     });
 
-    // Добавляем изображение в PDF
     const imgData = canvas.toDataURL("image/png");
     const imgProps = pdf.getImageProperties(imgData);
     const pdfWidth = pdf.internal.pageSize.getWidth();
@@ -285,7 +259,6 @@ downloadButton.addEventListener("click", async () => {
     pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
     pdf.save("resume.pdf");
 
-    // Перезагрузка страницы через 1 секунду после начала скачивания
     setTimeout(() => {
       location.reload();
     }, 1000);
@@ -293,7 +266,6 @@ downloadButton.addEventListener("click", async () => {
     console.error("Ошибка при генерации PDF:", error);
     alert("Произошла ошибка при генерации PDF. Пожалуйста, попробуйте снова.");
   } finally {
-    // Восстанавливаем стили контейнера
     Object.assign(container.style, {
       position: originalStyles.position || "",
       top: originalStyles.top || "",
@@ -305,10 +277,8 @@ downloadButton.addEventListener("click", async () => {
       transform: originalStyles.transform || "",
     });
 
-    // Восстанавливаем классы контейнера
     container.className = originalContainerClasses;
 
-    // Возвращаем кнопки
     actionButtons.style.visibility = originalActionVisibility;
     mostButtons.forEach((btn, i) => {
       btn.style.visibility = originalMostVisibility[i] || "";
@@ -317,7 +287,6 @@ downloadButton.addEventListener("click", async () => {
       btn.style.visibility = originalLikeVisibility[i] || "";
     });
 
-    // Восстанавливаем состояние редактирования
     if (wasEditing) {
       isEditing = true;
       container.classList.add("edit-mode");
@@ -330,7 +299,6 @@ downloadButton.addEventListener("click", async () => {
     button.textContent = originalButtonText;
     button.disabled = false;
 
-    // Возвращаем SVG к исходному состоянию
     await restoreOriginalSvgs();
   }
 });
@@ -401,5 +369,4 @@ async function convertSvgsToDataUrls() {
   return new Promise((resolve) => setTimeout(resolve, 300));
 }
 
-// Загрузка сохраненных данных при запуске
 window.addEventListener("DOMContentLoaded", loadSavedData);
