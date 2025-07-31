@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .intro-hello {
@@ -20,7 +20,7 @@
 
 .section-title {
   font-size: 24px;
-  font-weight: 500
+  font-weight: 500;
 }
 
 .lang span {
@@ -116,7 +116,6 @@ body {
   border-radius: 20px;
   transition: transform 0.3s ease;
 }
-
 
 .hover-animate {
   transition: all 0.3s ease;
@@ -274,7 +273,7 @@ body {
 }
 
 .job.green {
-  background: #28D979;
+  background: #28d979;
 }
 
 .job.green * {
@@ -283,8 +282,8 @@ body {
 
 .job.green .most-btn {
   opacity: 1;
-  background: #7E731266;
-  color: #DDF163;
+  background: #7e731266;
+  color: #ddf163;
 }
 
 .tools-section {
@@ -297,7 +296,6 @@ body {
   gap: 10px;
   overflow: visible;
 }
-
 
 .tools-section .section-title {
   text-align: left;
@@ -424,7 +422,7 @@ body {
 }
 
 .education-item.liked {
-  background: #28D979;
+  background: #28d979;
 }
 
 .education-item.liked .like-btn {
@@ -467,12 +465,12 @@ body {
 .contact {
   background: #000;
   color: #ffffff;
-  padding: 20px;
+  padding: 40px;
   border-radius: 20px;
   text-align: left;
   width: 100%;
   height: auto;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 100;
   position: relative;
   overflow: hidden;
@@ -512,7 +510,7 @@ body {
 
 .job.green .most-btn {
   background: rgba(0, 0, 0, 0.2) !important;
-  color: #DDF163 !important;
+  color: #ddf163 !important;
 }
 
 .education-item.liked * {
@@ -529,84 +527,101 @@ body {
 
 /* Анимации контейнеров */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Применение анимаций к контейнерам */
-.avatar-container { 
-  animation: fadeInLeft 0.6s ease-out both; 
+.avatar-container {
+  animation: fadeInLeft 0.6s ease-out both;
 }
 
 .avatar-container img:hover {
   transform: scale(1.03);
 }
 
-.header-info-container { 
-  animation: fadeInUp 0.6s ease-out 0.2s both; 
+.header-info-container {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
 }
 
-.languages-section { 
-  animation: fadeInRight 0.6s ease-out 0.4s both; 
+.languages-section {
+  animation: fadeInRight 0.6s ease-out 0.4s both;
 }
 
-.experience-section { 
-  animation: fadeInUp 0.6s ease-out 0.6s both; 
+.experience-section {
+  animation: fadeInUp 0.6s ease-out 0.6s both;
 }
 
-.tools-section { 
-  animation: fadeInRight 0.6s ease-out 0.8s both; 
+.tools-section {
+  animation: fadeInRight 0.6s ease-out 0.8s both;
 }
 
-.education-section { 
-  animation: fadeInLeft 0.6s ease-out 1s both; 
+.education-section {
+  animation: fadeInLeft 0.6s ease-out 1s both;
 }
 
-.interests-section { 
-  animation: fadeInUp 0.6s ease-out 1.2s both; 
+.interests-section {
+  animation: fadeInUp 0.6s ease-out 1.2s both;
 }
 
-.contact { 
-  animation: fadeInUp 0.6s ease-out 1.4s both; 
+.contact {
+  animation: fadeInUp 0.6s ease-out 1.4s both;
 }
-
 
 @media (max-width: 1024px) {
   body {
     padding: 20px;
   }
-  
+
   .container {
     padding: 30px;
   }
-  
+
   .row {
     grid-template-columns: 1fr 1fr;
   }
-  
+
   .avatar-container {
     grid-column: 1;
     grid-row: 1;
     justify-content: center;
   }
-  
+
   .header-info-container {
     grid-column: 1 / span 2;
     grid-row: 2;
     height: auto;
     margin-top: 20px;
   }
-  
+
   .languages-section {
     grid-column: 2;
     grid-row: 1;
@@ -614,30 +629,30 @@ body {
     margin-left: 0px;
     width: 700px;
   }
-  
+
   .experience-section {
     grid-column: 1 / span 2;
     width: auto;
   }
-  
+
   .tools-section {
     grid-column: 1 / span 2;
     grid-row: 2;
   }
-  
+
   .tools-container {
     flex-direction: row;
     justify-content: space-around;
     width: auto;
     height: auto;
   }
-  
+
   .education-section {
     grid-column: 1 / span 2;
     width: auto;
     height: auto;
   }
-  
+
   .education-item {
     width: auto;
     height: auto;
@@ -647,7 +662,7 @@ body {
     grid-column: 1 / span 2;
     width: 100%;
   }
-  
+
   .interests-section,
   .contact {
     width: 100%;
@@ -658,28 +673,28 @@ body {
   body {
     padding: 15px;
   }
-  
+
   .container {
     padding: 20px;
   }
-  
+
   .row {
     grid-template-columns: 1fr;
     gap: 15px;
   }
-  
+
   .avatar-container {
     grid-column: 1;
     grid-row: 1;
     justify-content: center;
   }
-  
+
   .header-info-container {
     grid-column: 1;
     grid-row: 2;
     height: auto;
   }
-  
+
   .languages-section {
     grid-column: 1;
     grid-row: 3;
@@ -692,18 +707,18 @@ body {
     grid-column: 1;
     grid-row: 1;
   }
-  
+
   .tools-section {
     grid-column: 1;
     grid-row: 2;
   }
-  
+
   .tools-container {
     flex-direction: column;
     align-items: center;
     gap: 20px;
   }
-  
+
   .tools-category {
     width: 100%;
     max-width: 300px;
@@ -713,7 +728,7 @@ body {
     grid-column: 1;
     grid-row: 1;
   }
-  
+
   .right-col {
     grid-column: 1;
     grid-row: 2;
@@ -723,7 +738,7 @@ body {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .job .job-details {
     margin-bottom: 15px;
   }
@@ -731,7 +746,7 @@ body {
   .education-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .education-item {
     width: 100%;
     height: auto;
@@ -745,32 +760,33 @@ body {
   .intro-hello {
     font-size: 16px !important;
   }
-  
+
   .header-info h1 {
     font-size: 20px !important;
   }
-  
+
   .intro-role {
     font-size: 16px !important;
   }
-  
+
   .section-title {
     font-size: 18px !important;
   }
-  
+
   .lang span {
     font-size: 14px !important;
   }
-  
+
   .job .date {
     font-size: 10px !important;
   }
-  
+
   .job h3 {
     font-size: 16px !important;
   }
-  
-  .job-details, .job ul {
+
+  .job-details,
+  .job ul {
     font-size: 10px !important;
   }
 }
@@ -779,12 +795,12 @@ body {
   body {
     padding: 10px;
   }
-  
+
   .container {
     padding: 15px;
     border-radius: 15px;
   }
- 
+
   .avatar-container img {
     width: 150px;
     height: 150px;
@@ -794,7 +810,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .languages-section {
     margin-left: 0px;
   }
@@ -802,7 +818,7 @@ body {
     width: 100%;
     margin-bottom: 5px;
   }
-  
+
   .bar {
     width: 100%;
   }
@@ -811,12 +827,12 @@ body {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .job-header > div {
     flex: 1;
     width: 100%;
   }
-  
+
   .job ul {
     padding-left: 15px;
   }
@@ -824,7 +840,7 @@ body {
   .education-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .education-item {
     width: 100%;
     height: auto;
@@ -839,7 +855,7 @@ body {
   .contact {
     padding: 15px;
   }
-  
+
   .contact p {
     margin-bottom: 5px;
   }
@@ -847,15 +863,15 @@ body {
   .intro-hello {
     font-size: 14px !important;
   }
-  
+
   .header-info h1 {
     font-size: 18px !important;
   }
-  
+
   .intro-role {
     font-size: 14px !important;
   }
-  
+
   .section-title {
     font-size: 16px !important;
   }
@@ -882,7 +898,7 @@ body {
   .contact {
     max-width: 270px;
   }
-  
+
   .contact strong {
     font-size: 12px;
   }
@@ -982,8 +998,12 @@ body {
 }
 
 @keyframes highlight {
-  0% { background-color: rgba(37, 211, 102, 0.3); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(37, 211, 102, 0.3);
+  }
+  100% {
+    background-color: transparent;
+  }
 }
 
 .highlight {
@@ -991,7 +1011,9 @@ body {
 }
 
 @media print {
-  .action-buttons, .most-btn, .like-btn {
+  .action-buttons,
+  .most-btn,
+  .like-btn {
     display: none !important;
   }
   body {
@@ -1082,67 +1104,66 @@ body {
   }
 
   .job.green {
-    background: #28D979 !important;
+    background: #28d979 !important;
   }
-  
+
   .education-item.liked {
-    background: #28D979 !important;
+    background: #28d979 !important;
   }
-  
+
   .contact {
     background: #000 !important;
   }
-  
+
   .bar .fill {
     background: #25d366 !important;
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .avatar-container { 
-    animation: fadeInLeft 0.6s ease-out both; 
+  .avatar-container {
+    animation: fadeInLeft 0.6s ease-out both;
   }
-  
-  .header-info-container { 
-    animation: fadeInUp 0.6s ease-out 0.2s both; 
+
+  .header-info-container {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
   }
-  
-  .languages-section { 
-    animation: fadeInRight 0.6s ease-out 0.4s both; 
+
+  .languages-section {
+    animation: fadeInRight 0.6s ease-out 0.4s both;
   }
-  
-  .experience-section { 
-    animation: fadeInUp 0.6s ease-out 0.6s both; 
+
+  .experience-section {
+    animation: fadeInUp 0.6s ease-out 0.6s both;
   }
-  
-  .tools-section { 
-    animation: fadeInRight 0.6s ease-out 0.8s both; 
+
+  .tools-section {
+    animation: fadeInRight 0.6s ease-out 0.8s both;
   }
-  
-  .education-section { 
-    animation: fadeInLeft 0.6s ease-out 1s both; 
+
+  .education-section {
+    animation: fadeInLeft 0.6s ease-out 1s both;
   }
-  
-  .interests-section { 
-    animation: fadeInUp 0.6s ease-out 1.2s both; 
+
+  .interests-section {
+    animation: fadeInUp 0.6s ease-out 1.2s both;
   }
-  
-  .contact { 
-    animation: fadeInUp 0.6s ease-out 1.4s both; 
+
+  .contact {
+    animation: fadeInUp 0.6s ease-out 1.4s both;
   }
 }
 
 .job h3 {
-  max-width: 100%; 
-  white-space: nowrap; 
+  max-width: 100%;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-
 .job .job-details {
-  max-width: 100%; 
-  white-space: nowrap; 
+  max-width: 100%;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -1159,19 +1180,19 @@ body {
 }
 
 .education-item .year {
-  white-space: nowrap; 
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .education-item .degree {
-  white-space: nowrap; 
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .education-item .institution {
-  white-space: nowrap; 
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -1186,7 +1207,7 @@ body {
 }
 
 .interests span {
-  white-space: nowrap; 
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 120px;

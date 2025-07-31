@@ -4,7 +4,6 @@ document.querySelectorAll(".most-btn").forEach((btn) => {
     const job = btn.closest(".job");
     const isActive = job.classList.contains("green");
 
-    
     document.querySelectorAll(".job").forEach((j) => {
       j.classList.remove("green");
       j.querySelector(".most-btn").textContent = "Most recent?";
@@ -17,25 +16,21 @@ document.querySelectorAll(".most-btn").forEach((btn) => {
   });
 });
 
-
 document.querySelectorAll(".like-btn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
     const item = btn.closest(".education-item");
     const isLiked = item.classList.contains("liked");
 
-   
     document
       .querySelectorAll(".education-item")
       .forEach((i) => i.classList.remove("liked"));
 
-   
     if (!isLiked) {
       item.classList.add("liked");
     }
   });
 });
-
 
 function createRipple(event) {
   const button = event.currentTarget;
@@ -62,7 +57,6 @@ document.querySelectorAll("button").forEach((btn) => {
   btn.addEventListener("click", createRipple);
 });
 
-
 const editButton = document.getElementById("edit-resume");
 const downloadButton = document.getElementById("download-pdf");
 const editableElements = document.querySelectorAll("[data-editable]");
@@ -70,16 +64,13 @@ const container = document.querySelector(".container");
 
 let isEditing = false;
 
-
 editButton.addEventListener("click", () => {
   isEditing = !isEditing;
 
   if (isEditing) {
-   
     container.classList.add("edit-mode");
     editButton.textContent = "Сохранить";
 
-    
     editableElements.forEach((el) => {
       el.contentEditable = true;
     });
