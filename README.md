@@ -47,7 +47,7 @@
 1. Клонировать репозиторий:
    ```bash
    git clone https://github.com/aaackermannn/front-end-exam.git
-   cd walter-white-resume
+   cd front-end-exam
    
 2. Открыть index.html в любом браузере (Chrome, Firefox, Edge).
 
